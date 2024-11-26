@@ -60,11 +60,35 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    // Handle login logic here
-    console.log("Username:", username);
-    console.log("Password:", password);
-  };
+ const handleLogin = () => {
+   const requestBody = {
+     MobileNumber: username,
+     Name: password,
+   };
+
+   fetch("http://localhost:3000/user/add", {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json",
+     },
+     body: JSON.stringify(requestBody),
+   })
+     .then((response) => {
+       if (!response.ok) {
+         throw new Error(`HTTP error! Status: ${response.status}`);
+       }
+       return response.json();
+     })
+     .then((data) => {
+       console.log("User added successfully:", data);
+       alert("User added successfully!");
+     })
+     .catch((error) => {
+       console.error("An error occurred:", error);
+       alert("Failed to add user.");
+     });
+ };
+
 
   return (
     <LoginContainer>
