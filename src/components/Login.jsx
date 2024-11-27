@@ -109,7 +109,7 @@ const Login = () => {
         />
         <InputField
           type="text"
-          placeholder="name"
+          placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
