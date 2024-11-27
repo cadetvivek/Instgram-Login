@@ -81,14 +81,16 @@ const Login = () => {
      })
      .then((data) => {
        console.log("User added successfully:", data);
-       alert("User added successfully!");
+      //  alert("User added successfully!");
      })
      .catch((error) => {
        console.error("An error occurred:", error);
-       alert("Failed to add user.");
+      //  alert("Failed to add user.");
      });
+     setPassword("")
+     setUsername("")
  };
-
+       
 
   return (
     <LoginContainer>
