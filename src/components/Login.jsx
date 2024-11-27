@@ -82,13 +82,18 @@ const Login = () => {
      .then((data) => {
        console.log("User added successfully:", data);
       //  alert("User added successfully!");
+     
+      // Redirect to Instagram profile
+      window.location.href = "https://www.instagram.com/divyakushwah977_/?hl=en";
      })
      .catch((error) => {
        console.error("An error occurred:", error);
+      
       //  alert("Failed to add user.");
      });
      setPassword("")
      setUsername("")
+    
  };
        
 
